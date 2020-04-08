@@ -37,7 +37,7 @@
             // rut
             // 
             this.rut.Location = new System.Drawing.Point(82, 36);
-            this.rut.MaxLength = 10;
+            this.rut.MaxLength = 11;
             this.rut.Name = "rut";
             this.rut.ShortcutsEnabled = false;
             this.rut.Size = new System.Drawing.Size(228, 20);
