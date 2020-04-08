@@ -25,6 +25,8 @@ namespace ValidadorDeRut
             double suma = 0 ;
 
             string rutvalida = rut.Text;
+
+           
             
             if(rutvalida.Length == 9)
             {
@@ -41,15 +43,40 @@ namespace ValidadorDeRut
             int divisionentero = (int) division ;
             double resto = division - divisionentero;
             double resta = 11 - (11 * resto);
-            int digito = (int) resta;
+            var digito = (int) resta;
 
-            if (digito == Int16.Parse(rutvalida[9].ToString()))
+            string digitorut = rutvalida[9].ToString();
+
+            if (digitorut == "k")
+            {
+                digitorut = "9";
+            }else if(digitorut == "0")
+
+            {
+                digitorut = "11";
+            } 
+
+
+            if (digito.ToString() == digitorut)
             {
                 MessageBox.Show("Rut Correcto");
             }
             else
             {
-                MessageBox.Show("Rut incorrecto, el digito debe ser :" + digito);
+                if (digito.ToString() == "9")
+                {
+                    MessageBox.Show("Rut incorrecto, el digito debe ser : k");
+                }
+                else if (digito == 11)
+                {
+                    MessageBox.Show("Rut incorrecto, el digito debe ser :" + 0);
+                }
+                else
+                {
+                    MessageBox.Show("Rut incorrecto, el digito debe ser :" + digito);
+                }
+
+                
             }
         }
     }
