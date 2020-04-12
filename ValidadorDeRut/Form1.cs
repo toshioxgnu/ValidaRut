@@ -43,7 +43,8 @@ namespace ValidadorDeRut
             int divisionentero = (int) division ;
             double resto = division - divisionentero;
             double resta = 11 - (11 * resto);
-            var digito = (int) resta;
+            Console.WriteLine(resta);
+            var digito = Math.Round(resta);
 
             string digitorut = rutvalida[9].ToString();
 
